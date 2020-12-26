@@ -19,15 +19,9 @@ class MainActivity() : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        /* var bba=0 */
+
         val bba :Editable?= binding.eTBomba.text
-
-
-
-        /* var rpm1 = 0 */
         val rpm1 :Editable?= binding.eTRPM1.text
-
-        /* var rpm2 = 0 */
         val rpm2 :Editable?= binding.eTRPM2.text
 
 
@@ -49,22 +43,44 @@ class MainActivity() : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
 
 
+                if (validacion ()) {
 
-                brutIniEf1= ((rpm1.toString().toDouble() * bba.toString().toDouble()) / 100)
-                brutIniEf1 *= binding.sBarEf1.progress.toDouble() / 100
+                    brutIniEf1 = ((rpm1.toString().toDouble() * bba.toString().toDouble()) / 100)
+                    brutIniEf1 *= binding.sBarEf1.progress.toDouble() / 100
 
-                println("$brutIniEf1")
+                    println("$brutIniEf1")
 
-                binding.tVBrutaIniEf1.text = brutIniEf1.toString()
+                    binding.tVBrutaIniEf1.text = brutIniEf1.toString()
 
-                brutFinEf1= ((rpm2.toString().toDouble() * bba.toString().toDouble()) / 100)
-                brutFinEf1 *= binding.sBarEf1.progress.toDouble() / 100
+                    brutFinEf1 = ((rpm2.toString().toDouble() * bba.toString().toDouble()) / 100)
+                    brutFinEf1 *= binding.sBarEf1.progress.toDouble() / 100
 
-                println("$brutFinEf1")
+                    println("$brutFinEf1")
 
-                binding.tVBrutaFinEf1.text = brutFinEf1.toString()
+                    binding.tVBrutaFinEf1.text = brutFinEf1.toString()
 
-                 Toast.makeText(applicationContext,"Rango barra 1 ${binding.sBarEf1.progress}", Toast.LENGTH_SHORT).show()
+                    binding.tvEf1.text = binding.sBarEf1.progress.toString()
+
+
+                    Toast.makeText(applicationContext, "Eficiencia 1 ${binding.sBarEf1.progress}", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            private fun validacion(): Boolean {
+                var validate = true
+
+                if (bba?.isEmpty() == true) {
+                     binding.eTBomba.setError("Completar tipo de Bomba")
+                        validate = false
+                }
+                if (rpm1?.isEmpty() == true) { binding.eTRPM1.setError("Completar RPM Inicial")
+                    validate = false
+                }
+                if (rpm2?.isEmpty() == true ) { binding.eTRPM2.setError("Completar RPM Final")
+                    validate = false
+                }
+
+                return validate
             }
 
         })
@@ -78,31 +94,51 @@ class MainActivity() : AppCompatActivity() {
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
 
-                brutIniEf2= ((rpm1.toString().toDouble() * bba.toString().toDouble()) / 100)
-                brutIniEf2 *= binding.sBarEf2.progress.toDouble() / 100
+                if(validacion()) {
 
-                println("$brutIniEf2")
+                    brutIniEf2 = ((rpm1.toString().toDouble() * bba.toString().toDouble()) / 100)
+                    brutIniEf2 *= binding.sBarEf2.progress.toDouble() / 100
 
-                binding.tVBrutaIniEf2.text = brutIniEf2.toString()
+                    println("$brutIniEf2")
 
-                brutFinEf2= ((rpm2.toString().toDouble() * bba.toString().toDouble()) / 100)
-                brutFinEf2 *= binding.sBarEf2.progress.toDouble() / 100
+                    binding.tVBrutaIniEf2.text = brutIniEf2.toString()
 
-                println("$brutFinEf2")
+                    brutFinEf2 = ((rpm2.toString().toDouble() * bba.toString().toDouble()) / 100)
+                    brutFinEf2 *= binding.sBarEf2.progress.toDouble() / 100
 
-                binding.tVBrutaFinEf2.text = brutFinEf2.toString()
+                    println("$brutFinEf2")
 
-                Toast.makeText(applicationContext, "Rango barra 2  ${binding.sBarEf2.progress}", Toast.LENGTH_SHORT).show()
+                    binding.tVBrutaFinEf2.text = brutFinEf2.toString()
 
+                    binding.tvEf2.text = binding.sBarEf2.progress.toString()
+
+                    Toast.makeText(applicationContext, "Eficiencia 2  ${binding.sBarEf2.progress}", Toast.LENGTH_SHORT).show()
+                }
 
             }
 
+
+            private fun validacion(): Boolean {
+                var validate = true
+
+                if (bba?.isEmpty() == true ) { binding.eTBomba.setError("Completar tipo de Bomba")
+                    validate = false
+                }
+                if (rpm1?.isEmpty() == true ) { binding.eTRPM1.setError("Completar RPM Inicial")
+                    validate = false
+                }
+                if (rpm2?.isEmpty() == true ) { binding.eTRPM2.setError("Completar RPM Final")
+                    validate = false
+                }
+
+                return validate
+            }
         })
 
 
+
+
     }
-
-
 
 
 }

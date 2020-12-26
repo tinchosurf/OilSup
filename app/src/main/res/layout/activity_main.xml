@@ -8,34 +8,46 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvEf2"
+        android:layout_width="22dp"
+        android:layout_height="18dp"
+        android:maxLength="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/sBarEf2"
+        app:layout_constraintTop_toTopOf="@+id/sBarEf2" />
+
+    <TextView
         android:id="@+id/tVBrutaIniEf1"
         android:layout_width="140dp"
         android:layout_height="80dp"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="324dp"
         android:maxLength="3"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/sBarEf2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sBarEf1"
+        app:layout_constraintVertical_bias="0.496" />
 
     <TextView
         android:id="@+id/tVBrutaFinEf1"
         android:layout_width="140dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="324dp"
+        android:layout_marginEnd="24dp"
         android:maxLength="3"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/sBarEf2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sBarEf1" />
 
     <EditText
         android:id="@+id/eTBomba"
         android:layout_width="129dp"
         android:layout_height="72dp"
         android:layout_marginTop="16dp"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="Bomba"
+        android:hint="@string/bomba_pcp"
         android:inputType="number"
         android:maxLength="3"
         app:layout_constraintBottom_toTopOf="@+id/eTRPM1"
@@ -47,73 +59,81 @@
         android:id="@+id/eTRPM1"
         android:layout_width="103dp"
         android:layout_height="64dp"
+        android:layout_marginTop="140dp"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="RPM 1"
+        android:hint="@string/rpm_1"
         android:inputType="number"
         android:maxLength="3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/eTRPM2"
-        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/eTRPM2"
         android:layout_width="103dp"
         android:layout_height="64dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="28dp"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="RPM 2"
+        android:hint="@string/rpm_2"
         android:inputType="number"
         android:maxLength="3"
         app:layout_constraintBottom_toTopOf="@+id/sBarEf1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTBomba"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/eTBomba" />
 
     <SeekBar
         android:id="@+id/sBarEf1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_width="262dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="148dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTRPM1" />
+        app:layout_constraintTop_toBottomOf="@+id/eTBomba" />
 
     <SeekBar
         android:id="@+id/sBarEf2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="259dp"
+        android:layout_height="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sBarEf1"
-        app:layout_constraintVertical_bias="0.495" />
+        app:layout_constraintVertical_bias="0.493" />
 
     <TextView
         android:id="@+id/tVBrutaFinEf2"
         android:layout_width="140dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="36dp"
         android:maxLength="3"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sBarEf2"
+        app:layout_constraintVertical_bias="0.477" />
 
     <TextView
         android:id="@+id/tVBrutaIniEf2"
         android:layout_width="140dp"
         android:layout_height="80dp"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="80dp"
         android:maxLength="3"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sBarEf2"
+        app:layout_constraintVertical_bias="0.477" />
+
+    <TextView
+        android:id="@+id/tvEf1"
+        android:layout_width="22dp"
+        android:layout_height="18dp"
+        android:maxLength="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/sBarEf1"
+        app:layout_constraintTop_toTopOf="@+id/sBarEf1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

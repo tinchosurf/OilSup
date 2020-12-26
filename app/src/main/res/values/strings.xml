@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">OilSup</string>
+    <string name="bomba">Bomba</string>
+    <string name="rpm_1">RPM 1</string>
+    <string name="rpm_2">RPM 2</string>
+    <string name="bomba_pcp">BOMBA PCP</string>
 </resources>
